@@ -1,4 +1,4 @@
-#FreeFlow
+FreeFlow
 Decentralized, Offline-Resilient Mesh Networking with Built-In Incentives
 
 Overview:
