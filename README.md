@@ -1,25 +1,27 @@
 <h1>FreeFlow</h1>
 Decentralized, Offline-Resilient Mesh Networking with Built-In Incentives
 
-Overview:
+<h3>Overview:</h3>
 
 FreeFlow is a protocol and system for creating resilient, anonymous, and censorship-resistant communication networks using mobile and portable devices.
 It works without internet access, without centralized servers, and thrives in environments with poor or no connectivity.
 
 The system is powered by a unique economic layer called PoCCA – Proof-of-Contact Credit Architecture. This mechanism rewards devices for participating in the network by connecting, relaying, and storing data, enabling FreeFlow to expand naturally.
 
-Project Goals:
+<h3>Project Goals:</h3>
 
 Enable device-to-device communication during internet shutdowns or censorship
 Create mesh networks from smartphones, wearables, and other devices using Bluetooth, Wi-Fi Direct, or local radio protocols
 Allow data to propagate across disconnected areas via store-and-forward
 Provide strong privacy using cryptographic identities and onion routing
 Reward participation using decentralized credits
-Core Concepts:
+
+<h3>Core Concepts:</h3>
 
 Mesh Clusters: Local networks formed between nearby devices using short-range radio. Devices share identity, presence, and routing hints.
 Bridge Nodes: Devices that link separate clusters. These can be physical couriers or long-range transmitters that carry data between zones.
 Partial Routing: Nodes do not know the global topology. Instead, they maintain a small list of known clusters and use probabilistic or shortest-path routing based on available info.
+
 Store-and-Forward: If no route exists to a destination, data is securely stored and forwarded once the path becomes available.
 PoCCA – Proof-of-Contact Credit Architecture: An incentive model that generates cryptographic proofs of activity, including contact, relay, and storage. These proofs form the basis for credit and reputation systems within the mesh.
 Addressing:
@@ -28,7 +30,7 @@ Each node address follows the format:
 
 <ClusterID>:<NodeID>.<SessionID>
 
-Example:
+<h2>Example:</h2>
 
 A3xh:g7h6.bbqh
 
@@ -62,7 +64,7 @@ Packet Example:
 "hops_left": 5
 }
 
-Project Status:
+<h3>Project Status:</h3>
 
 Protocol and architecture are complete
 Addressing system implemented
@@ -82,7 +84,7 @@ Contributors Wanted:
 
 We are looking for collaborators who believe in building open, censorship-resistant infrastructure.
 
-Needed roles include:
+<h3>Needed roles include:</h3>
 
 Python developers
 Rust developers
