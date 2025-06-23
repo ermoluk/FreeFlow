@@ -12,14 +12,14 @@ We maintain security updates only for the most recent stable versions of FreeFlo
 
 ---
 
-## 📢 Reporting a Vulnerability
+## Reporting a Vulnerability
 
 If you discover a security vulnerability in FreeFlow, we strongly encourage you to report it privately and responsibly.
 
 Please **do not** open public issues for security flaws.
 
 ### How to Report:
-- Email: `security@freflw.net` *(or placeholder if you don’t have email yet)*
+- Email: `eermoluk3@gmail.con`
 - Optionally use PGP encryption (key coming soon)
 - You can also open a private GitHub Security Advisory if you prefer.
 
