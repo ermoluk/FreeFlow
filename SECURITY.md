@@ -19,7 +19,7 @@ If you discover a security vulnerability in FreeFlow, we strongly encourage you 
 Please **do not** open public issues for security flaws.
 
 ### How to Report:
-- Email: `eermoluk3@gmail.con`
+- Email: `eermoluk3@gmail.com`
 - Optionally use PGP encryption (key coming soon)
 - You can also open a private GitHub Security Advisory if you prefer.
 
