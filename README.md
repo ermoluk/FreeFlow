@@ -28,7 +28,7 @@ Addressing:
 
 Each node address follows the format:
 
-<ClusterID>:<NodeID>.<SessionID>
+ClusterID:NodeID.SessionID
 
 <h2>Example:</h2>
 
