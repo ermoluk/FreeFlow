@@ -12,13 +12,13 @@ This simulation validates the following key components of FreeFlow:
 	•	Network metrics: tracks average latency, percentage of offline nodes, and PoC efficiency.
 
 # How to Run
-	1.	Clone the repository:
+1.	Clone the repository:
 git clone https://github.com/<your-username>/FreeFlow.git && cd FreeFlow
-	2.	Install dependencies:
+2.	Install dependencies:
 pip install -r requirements.txt
-	3.	Run the simulation:
+3.	Run the simulation:
 python3 simulations/test_simulation.py
-	4.	View logs:
+4.	View logs:
 Simulation logs are saved in log.txt.
 
 # Simulation Report
@@ -75,5 +75,6 @@ BRIDGE FAILURE: Node 97 failed
 This project is licensed under the MIT License.
 
 # Learn More
-	•	FreeFlow Whitepaper: https://github.com/ermoluk/FreeFlow/wiki
-	•	Project website: https://freeflw.net/
+FreeFlow Whitepaper: https://github.com/ermoluk/FreeFlow/wiki
+
+Project website: https://freeflw.net/
