@@ -20,7 +20,7 @@ for step in range(5):
     else:
         print(f"No path between Node {start.id} and Node {end.id} (some nodes offline)")
 
-print("\n=== Journals ===")
+print("\n== Journals ==")
 for node in nodes:
     print(f"Node {node.id} journal:")
     for entry in node.journal:
