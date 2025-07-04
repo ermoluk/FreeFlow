@@ -8,14 +8,18 @@ def generate_nodes(count, area_size=100):
         nodes.append(Node(i, pos))
     return nodes
 
-def connect_neighbors(nodes, radius=40):
+def connect_neighbors(nodes, radius=30):
     for node in nodes:
+        node.neighbors = []
         for other in nodes:
             if node != other and node.distance_to(other) <= radius:
                 node.add_neighbor(other)
 
-def find_shortest_path(start_node, end_node):
+def find_path(start_node, end_node):
     from collections import deque
+
+    if not start_node.online or not end_node.online:
+        return None
 
     visited = set()
     queue = deque()
@@ -29,7 +33,12 @@ def find_shortest_path(start_node, end_node):
         visited.add(current_node)
 
         for neighbor in current_node.neighbors:
-            if neighbor not in visited and neighbor not in path:
+            if neighbor not in visited and neighbor.online:
                 queue.append((neighbor, path + [neighbor]))
 
     return None
+
+def random_toggle(nodes, probability=0.2):
+    for node in nodes:
+        if random.random() < probability:
+            node.toggle_status()
