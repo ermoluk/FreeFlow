@@ -1,104 +1,145 @@
-<h1>FreeFlow</h1>
-Decentralized, Offline-Resilient Mesh Networking with Built-In Incentives
+<h1>🌀 FreeFlow</h1>
+<p><strong>Decentralized, Offline-Resilient Mesh Networking with Built-In Incentives</strong></p>
 
-<h3>Overview:</h3>
+<hr>
 
-FreeFlow is a protocol and system for creating resilient, anonymous, and censorship-resistant communication networks using mobile and portable devices.
-It works without internet access, without centralized servers, and thrives in environments with poor or no connectivity.
+<h2>🌍 Overview</h2>
+<p>
+  <strong>FreeFlow</strong> is a protocol and system for creating 
+  <strong>resilient, anonymous, and censorship-resistant</strong> 
+  communication networks using mobile and portable devices.<br>
+  It operates <strong>without internet access</strong>, 
+  <strong>without centralized servers</strong>, 
+  and thrives even in environments with weak or no connectivity.
+</p>
+<p>
+  At its core lies the economic layer 
+  <strong>PoCCA (Proof-of-Contact Credit Architecture)</strong> — 
+  a mechanism that rewards devices for participating in the network 
+  by connecting, relaying, and storing data, 
+  allowing FreeFlow to expand organically.
+</p>
 
-The system is powered by a unique economic layer called PoCCA – Proof-of-Contact Credit Architecture. This mechanism rewards devices for participating in the network by connecting, relaying, and storing data, enabling FreeFlow to expand naturally.
+<hr>
 
-<h3>Project Goals:</h3>
+<h2>🎯 Project Goals</h2>
+<ul>
+  <li>Enable <strong>device-to-device communication</strong> during internet shutdowns or censorship.</li>
+  <li>Use <strong>Bluetooth</strong>, <strong>Wi-Fi Direct</strong>, and <strong>local radio protocols</strong> to build mesh clusters.</li>
+  <li>Implement <strong>store-and-forward</strong> propagation for disconnected regions.</li>
+  <li>Ensure <strong>privacy and anonymity</strong> through cryptographic identities and <strong>onion routing</strong>.</li>
+  <li><strong>Reward participation</strong> using decentralized credits (not blockchain-dependent).</li>
+</ul>
 
-Enable device-to-device communication during internet shutdowns or censorship
-Create mesh networks from smartphones, wearables, and other devices using Bluetooth, Wi-Fi Direct, or local radio protocols
-Allow data to propagate across disconnected areas via store-and-forward
-Provide strong privacy using cryptographic identities and onion routing
-Reward participation using decentralized credits
+<hr>
 
-<h3>Core Concepts:</h3>
+<h2>🧩 Core Concepts</h2>
 
-Mesh Clusters: Local networks formed between nearby devices using short-range radio. Devices share identity, presence, and routing hints.
-Bridge Nodes: Devices that link separate clusters. These can be physical couriers or long-range transmitters that carry data between zones.
-Partial Routing: Nodes do not know the global topology. Instead, they maintain a small list of known clusters and use probabilistic or shortest-path routing based on available info.
+<h3>🔹 Mesh Clusters</h3>
+<p>
+  Local networks formed between nearby devices using short-range radio. 
+  Devices exchange identity, presence, and routing hints.
+</p>
 
-Store-and-Forward: If no route exists to a destination, data is securely stored and forwarded once the path becomes available.
-PoCCA – Proof-of-Contact Credit Architecture: An incentive model that generates cryptographic proofs of activity, including contact, relay, and storage. These proofs form the basis for credit and reputation systems within the mesh.
-Addressing:
+<h3>🔹 Bridge Nodes</h3>
+<p>
+  Devices that link separate clusters — physically (couriers, drones) 
+  or via long-range radio — enabling data transfer between isolated zones.
+</p>
 
-Each node address follows the format:
+<h3>🔹 Partial Routing</h3>
+<p>
+  Nodes do not know the global topology. 
+  Instead, they maintain a small list of known clusters 
+  and use probabilistic or shortest-path routing based on available data.
+</p>
 
-ClusterID:NodeID.SessionID
+<h3>🔹 Store-and-Forward</h3>
+<p>
+  If no route exists to the destination, data is <strong>encrypted and stored</strong> locally, 
+  then forwarded once a valid path appears.
+</p>
 
-<h2>Example:</h2>
+<hr>
 
-A3xh:g7h6.bbqh
+<h2>💠 PoCCA — Proof-of-Contact Credit Architecture</h2>
+<p>
+  An incentive model that generates <strong>cryptographic proofs of network activity</strong> and rewards useful behavior.
+</p>
 
-ClusterID is a short hash of the cluster’s public key
-NodeID is a short hash of the node’s public key
-SessionID is a one-time identifier for each contact or packet
-Security and Privacy:
+<ul>
+  <li><strong>Proof of Contact (PoC):</strong> Two devices connect and exchange signed contact logs for credit.</li>
+  <li><strong>Proof of Relay (PoR):</strong> Relay nodes sign the packet path and earn credit.</li>
+  <li><strong>Proof of Store (PoS):</strong> Nodes that store data offline and later deliver it also gain credit.</li>
+</ul>
 
-All messages are signed using Ed25519 keys
-Onion routing hides the full route and encrypts each hop
-Session IDs prevent replay attacks and spoofing
-Trust is established using cryptographically signed local logs
-PoCCA (Proof-of-Contact Credit Architecture):
+<p>
+  Each node maintains a <strong>local ledger</strong> of its actions, 
+  which synchronizes and verifies when connecting to a wider mesh.  
+  Credits can be used for <strong>priority transmission</strong>, 
+  <strong>service access</strong>, or <strong>peer exchange</strong>.
+</p>
 
-FreeFlow uses PoCCA to reward nodes for useful behavior.
+<hr>
 
-Proof of Contact (PoC): Two devices that connect exchange signed contact logs for credit
-Proof of Relay (PoR): Each relay node signs the packet path and earns credit
-Proof of Store (PoS): If a node stores a packet offline and later delivers it, it also earns credit
-Local Ledger: All activity is logged locally. When the device connects to a wider mesh, these logs are synchronized and verified.
-Credits: Rewards can be used for priority transmission, service access, or peer exchange. They are not dependent on any specific blockchain.
-Packet Example:
+<h3>📡 Addressing Format</h3>
+<p><code>ClusterID:NodeID.SessionID</code></p>
 
-{
-"from": "A3xh:g7h6",
-"to": "Jk92:kf45",
-"session": "bbqh",
-"type": "onion",
-"payload": "encrypted_blob",
-"signature": "sig_by_private_key",
-"hops_left": 5
+<h4>Example:</h4>
+<p><code>A3xh:g7h6.bbqh</code></p>
+
+<p>
+  <strong>ClusterID</strong> — short hash of the cluster’s public key.<br>
+  <strong>NodeID</strong> — short hash of the node’s public key.<br>
+  <strong>SessionID</strong> — one-time identifier for each session or packet.
+</p>
+
+<hr>
+
+<h3>🔐 Security & Privacy</h3>
+<ul>
+  <li>All messages are signed using <code>Ed25519</code> keys.</li>
+  <li>Onion routing hides the complete route and encrypts each hop.</li>
+  <li>Session IDs prevent replay attacks and spoofing.</li>
+  <li>Trust is built using <strong>locally signed logs</strong> and <strong>PoCCA</strong> proofs.</li>
+</ul>
+
+<hr>
+
+<h3>📦 Packet Example</h3>
+<pre><code>{
+  "from": "A3xh:g7h6",
+  "to": "Jk92:kf45",
+  "session": "bbqh",
+  "type": "onion",
+  "payload": "encrypted_blob",
+  "signature": "sig_by_private_key",
+  "hops_left": 5
 }
+</code></pre>
 
-<h3>Project Status:</h3>
+<hr>
 
-Protocol and architecture are complete
-Addressing system implemented
-Routing algorithms (Dijkstra and TTL-flooding) tested in simulation
-Python simulator in development
-Android relay app in early testing
-PoCCA token accounting in design phase
-Roadmap:
+<h2>👥 Needed Roles</h2>
+<ul>
+  <li>Python developers</li>
+  <li>Rust developers</li>
+  <li>Kotlin / Android developers</li>
+  <li>Swift / iOS developers</li>
+  <li>Cryptography & Protocol Engineers</li>
+  <li>Distributed Systems Researchers</li>
+  <li>C / C++ developers (ESP32 & embedded runtime)</li>
+</ul>
 
-Build functional network simulation in Python
-Implement onion-layered routing
-Develop Android app with BLE-based peer exchange
-Create modular identity and validation layer
-Design decentralized credit management system
-Publish developer documentation and whitepaper
-Contributors Wanted:
+<hr>
 
-We are looking for collaborators who believe in building open, censorship-resistant infrastructure.
+<h2>🚀 Why FreeFlow Matters</h2>
+<p>
+  When the internet is <strong>blocked, shut down, or unavailable</strong>, 
+  people still need to communicate.  
+  FreeFlow allows individuals to stay connected, share information, and remain free.
+</p>
 
-<h3>Needed roles include:</h3>
+<p><em>Communication must be decentralized, anonymous, and unstoppable.</em></p>
 
-Python developers
-Rust developers
-Kotlin / Android developers
-Swift / iOS developers
-Cryptography and protocol engineers
-Distributed systems researchers
-C and C++ developers (for embedded mesh runtime, ESP32, and low-level device control)
-Why FreeFlow Matters:
-
-When the internet is censored, shut down, or simply unavailable — people still need to communicate. FreeFlow gives individuals the ability to stay connected, share information, and remain free.
-
-Communication must be decentralized, anonymous, and unstoppable.
-
-2025 ermoluk
-
-
+<p><strong>© 2025 – ermoluk</strong></p>
